@@ -3,9 +3,9 @@ import './App.css'
 function Menu() {
   return (
     <ul className="flex gap-8 px-10 m-0 p-4 menu-item">
-      <li className="hover:text-gray-500 menu-item">Home</li>
-      <li className="hover:text-gray-500 menu-item">Projects</li>
-      <li className="hover:text-gray-500 menu-item">Contact</li>
+      <li className="hover:text-gray-500 transition-colors menu-item">Home</li>
+      <li className="hover:text-gray-500 transition-colors menu-item">Projects</li>
+      <li className="hover:text-gray-500 transition-colors menu-item">Contact</li>
     </ul>
   );
 }
