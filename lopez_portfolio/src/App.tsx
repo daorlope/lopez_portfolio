@@ -1,21 +1,18 @@
-function Profile() {
+function Menu() {
   return (
-    <img
-      src="https://react.dev/images/docs/scientists/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
+    <ul>
+      <li>Home</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
   );
 }
 
-export default function Gallery() {
+export default function Portfolio() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
+      <Menu />
+      <Menu />
     </section>
   );
 }
