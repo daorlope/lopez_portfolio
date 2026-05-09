@@ -13,7 +13,7 @@ function Menu() {
 function Welcome() {
   return (
     <div>
-      <img src="../public/question.png" width="150" height="150"></img>
+      <img src="./question.png" width="150" height="150"></img>
       <h1>Dante Lopez</h1>
       <h3>Aspiring Embedded Systems Engineer</h3>
     </div>
@@ -23,7 +23,7 @@ function Welcome() {
 function Project() {
   return (
     <div>
-        <img src="../public/question.png" width="150" height="150"></img>
+        <img src="./question.png" width="150" height="150"></img>
         <ul>
           <li>1</li>
           <li>2</li>
