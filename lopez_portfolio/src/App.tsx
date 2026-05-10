@@ -7,20 +7,19 @@ function Menu() {
         <li className="hover:text-[#b8b3a9] transition-colors menu-item">Home</li>
         <li className="hover:text-[#b8b3a9] transition-colors menu-item">Projects</li>
         <li className="hover:text-[#b8b3a9] transition-colors menu-item">Contact</li>
-    </ul>
+      </ul>
     </nav>
   );
 }
 
 function Welcome() {
   return (
-    <div className='flex bg-[#EDE8DC] h-[80vh] gap-7 sm:gap-15 md:gap-30 lg:gap-75 items-center justify-center'>
-      <img src="./me.jpg" width="150" height="150" className=''></img>
-      <div className="font-semibold">
-        <h1 className='text-xl sm:text-xl md:text-5xl lg:text-6xl'>Dante Lopez</h1>
-        <h3 className='text-xs sm:text-xs md:text-xs lg:text-base'>Aspiring Embedded Systems Engineer</h3>
-      </div>
-
+    <div className='flex p-2 bg-[#EDE8DC] h-[80vh] gap-7 sm:gap-15 md:gap-25 lg:gap-50 items-center justify-center'>
+        <img src="./me.jpg" className='h-40 w-40 sm:h-40 sm:w-40 md:h-50 md:w-50 lg:h-65 lg:w-65 rounded-full'></img>
+        <div className="font-semibold m-0">
+          <h1 className='py-1 text-4xl sm:text-5xl md:text-7xl lg:text-7xl'>Dante Lopez</h1>
+          <h3 className='py-1 text-xs sm:text-xs md:text-base lg:text-lg'>Aspiring Embedded Systems Engineer</h3>
+        </div>
     </div>
   );
 }
