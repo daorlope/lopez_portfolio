@@ -63,9 +63,9 @@ function Contact()
   )
 }
 
-const ventilation_project = [
+// const ventilation_project = [
 
-];
+// ];
 
 const project_1_info = {
   title: "Project Title",
