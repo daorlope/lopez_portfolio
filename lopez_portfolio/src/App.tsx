@@ -3,7 +3,7 @@ import './App.css'
 function Menu() {
   return (
     <nav className="fixed w-full bg-[#EDE8DC] border-b-2 p-4 text-lg mb-0">
-      <ul className="flex list-none justify-end gap-10 px-7 m-0">
+      <ul className="flex w-full list-none justify-end gap-10 px-7 m-0">
         <li className="hover:text-[#8A5F41] transition-colors"><a href="#home">Home</a></li>
         <li className="hover:text-[#8A5F41] transition-colors"><a href="#projects">Projects</a></li>
         <li className="hover:text-[#8A5F41] transition-colors"><a href="#contact">Contact</a></li>
@@ -15,7 +15,7 @@ function Menu() {
 function Welcome() {
   return (
     <div id="home" className='flex pt-20 p-2 bg-[#EDE8DC] h-[90vh] border-b-2 gap-7 sm:gap-15 md:gap-25 lg:gap-50 items-center justify-center'>
-        <img src="./me.jpeg" className='border-2 h-40 w-40 sm:h-40 sm:w-40 md:h-50 md:w-50 lg:h-65 lg:w-65 rounded-full'></img>
+        <img src="./me.jpeg" alt="profile" className='border-2 h-40 w-40 sm:h-40 sm:w-40 md:h-50 md:w-50 lg:h-65 lg:w-65 rounded-full'></img>
         <div>
           <div className="font-semibold m-0">
             <h1 className='py-1 text-4xl sm:text-5xl md:text-7xl lg:text-7xl'>Dante Lopez</h1>
@@ -34,13 +34,13 @@ function Welcome() {
 function Project({img_link, info, skills}: any) {
   const {title, role, description} = info;
   return (
-  <div id="projects" className='scroll-mt-35 justify-center px-full py-5 border-2 rounded m-0 h-auto w-8/10 sm:w-8/10 md:w-9/10 lg:w-45/100'>
-      <img src={img_link} width="150" className="h-auto w-6/10 sm:w-6/10 md:w-6/10 lg:w-8/10 opacity-100 mx-auto rounded "></img>
+  <div id="projects" className='scroll-mt-35 sm:flex-row md:flex lg:flex-wrap justify-center px-full py-5 border-2 rounded m-0 h-auto w-8/10 sm:w-8/10 md:w-9/10 lg:w-45/100'>
+      <img src={img_link} width="150" className=" border-2 h-auto w-6/10 sm:w-6/10 md:w-6/10 lg:w-8/10 opacity-100 ml-auto sm:ml-auto md:ml-3 lg:ml-auto mr-auto rounded "></img>
       <section className='text-center'>
-        <h1 className='font-semibold'>{title}</h1> {/* Project Title */}
-        <h3>{role}</h3> {/* Role/Subtitle */}
-        <p>{description}</p>   {/* Project Description */}
-        <ul className='flex justify-center gap-3'>
+        <h1 className='font-semibold text-xl pt-3'>{title}</h1> {/* Project Title */}
+        <h3 className='pt-1'>{role}</h3> {/* Role/Subtitle */}
+        <p className='text-center w-8/10 m-auto py-2'>{description}</p>   {/* Project Description */}
+        <ul className='flex justify-center gap-3 py-2'>
           {skills.map((skill: string, index:number) => (
             <li className='border-1 rounded px-1' key={index}>{skill}</li>
           ))}
@@ -55,17 +55,40 @@ function Contact()
   return(
     <div id="contact" className='h-auto pt-3 pb-5 text-center'>
       <h1 className='text-center underline font-semibold text-xl rounded w-2/5 m-auto'>Contact me</h1>
-      <p className='py-2'>You can probably reach me through </p>
+      <p className='py-2'>You can reach me through:</p>
       <a href="https://www.linkedin.com/in/dante-lopez-0a6073283/" target='_blank'><img src="./linkedin.png" className='w-6 h-6 m-auto'/></a>
-      <p className='items-center'>or</p>
+      <p className='items-center'>or email me at:</p>
       <span className='underline'><a href="mailto:daorlope@ucsc.edu">daorlope@ucsc.edu</a></span>
     </div>
   )
 }
 
-// const ventilation_project = [
+const ventilation_project = 
+{
+  title: "Ventilation System",
+  role: "",
+  description: "While working as an undergraduate research assistant for jLab, [insert small description here], I designed a ventilation system that would reduce the amount of CO2 after some threshold."
+}
 
-// ];
+const ventilation_project_skills =
+[
+  "Soldering",
+  "C++",
+  "Sensors",
+  "I2C"
+]
+
+const rover_project = 
+{
+  title: "Rover Prototype",
+  role: "",
+  description: "Lots of words"
+}
+
+const rover_skills =
+[
+  "Raspberry Pi"
+]
 
 const project_1_info = {
   title: "Project Title",
@@ -79,6 +102,7 @@ const project_1_skills = [
   "skill 3",
 ];
 
+// All images must be 5:4 aspect ratio
 export default function Portfolio() {
   return (
     <div className='bg-[#EDE8DC]'>
@@ -91,8 +115,8 @@ export default function Portfolio() {
             </div>
           
             <section className='flex bg-[#EDE8DC] flex-wrap gap-3 justify-center py-3'>
-              <Project img_link={"./ventilation.jpeg"} info={project_1_info} skills={project_1_skills} />
-              <Project img_link={"./lunabotics.jpeg"} info={project_1_info} skills={project_1_skills}/>
+              <Project img_link={"./ventilation.jpeg"} info={ventilation_project} skills={ventilation_project_skills} />
+              <Project img_link={"./lunabotics.jpeg"} info={rover_project} skills={rover_skills}/>
               <Project img_link={"./sensor_system.jpeg"} info={project_1_info} skills={project_1_skills}/>
             </section>
           </div>
