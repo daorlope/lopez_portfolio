@@ -34,13 +34,13 @@ function Welcome() {
 function Project({img_link, info, skills}: any) {
   const {title, role, description} = info;
   return (
-  <div id="projects" className='scroll-mt-35 sm:flex-row md:flex lg:flex-wrap justify-center px-full py-5 border-2 rounded m-0 h-auto w-8/10 sm:w-8/10 md:w-9/10 lg:w-45/100'>
-      <img src={img_link} width="150" className=" border-2 h-auto w-6/10 sm:w-6/10 md:w-6/10 lg:w-8/10 opacity-100 ml-auto sm:ml-auto md:ml-3 lg:ml-auto mr-auto rounded "></img>
-      <section className='text-center'>
+  <div id="projects" className='scroll-mt-35 sm:flex-row md:flex lg:flex-wrap justify-center px-full py-5 border-2 rounded m-0 h-auto w-8/10 sm:w-8/10 md:w-9/10 lg:w-47/100'>
+      <img src={img_link} width="150" className=" border-2 h-auto w-6/10 sm:w-6/10 md:w-6/10 lg:w-8/10 opacity-100 ml-auto sm:ml-auto md:ml-3 lg:ml-auto mr-auto sm: md:mr-3 lg:mr-auto rounded "></img>
+      <section className='text-center m-auto'>
         <h1 className='font-semibold text-xl pt-3'>{title}</h1> {/* Project Title */}
         <h3 className='pt-1'>{role}</h3> {/* Role/Subtitle */}
         <p className='text-center w-8/10 m-auto py-2'>{description}</p>   {/* Project Description */}
-        <ul className='flex justify-center gap-3 py-2'>
+        <ul className='flex flex-wrap justify-center gap-3 py-2'>
           {skills.map((skill: string, index:number) => (
             <li className='border-1 rounded px-1' key={index}>{skill}</li>
           ))}
@@ -72,9 +72,11 @@ const ventilation_project =
 
 const ventilation_project_skills =
 [
-  "Soldering",
   "C++",
-  "Sensors",
+  "ESP32",
+  "Soldering",
+  "CO2 Sensor",
+  "BME280 Sensor",
   "I2C"
 ]
 
@@ -87,19 +89,27 @@ const rover_project =
 
 const rover_skills =
 [
-  "Raspberry Pi"
+  "Python",
+  "Raspberry Pi",
+  "Bluetooth",
+  "DC Motors",
+  "Servos",
+  "Power Distribution"
 ]
 
-const project_1_info = {
-  title: "Project Title",
-  role: "My role",
+const servo_system = {
+  title: "Servo controller system",
+  role: "",
   description: "Descrption of what I did in the project"
 };
 
-const project_1_skills = [
-  "skill 1",
-  "skill 2",
-  "skill 3",
+const servo_system_skills = [
+  "C",
+  "PIC32",
+  "SPI",
+  "PWM",
+  "Servos",
+  "Ping Sensor"
 ];
 
 // All images must be 5:4 aspect ratio
@@ -117,7 +127,7 @@ export default function Portfolio() {
             <section className='flex bg-[#EDE8DC] flex-wrap gap-3 justify-center py-3'>
               <Project img_link={"./ventilation.jpeg"} info={ventilation_project} skills={ventilation_project_skills} />
               <Project img_link={"./lunabotics.jpeg"} info={rover_project} skills={rover_skills}/>
-              <Project img_link={"./sensor_system.jpeg"} info={project_1_info} skills={project_1_skills}/>
+              <Project img_link={"./sensor_system.jpeg"} info={servo_system} skills={servo_system_skills}/>
             </section>
           </div>
       </main>
